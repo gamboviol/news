@@ -20,17 +20,17 @@ running
 
 1. download some (large) data files, known as the RCV1 dataset, which consists of just over 800,000 Reuters news stories from 1996-7, mainly about topics of business interest:
 
-	./scripts/get_data.sh
+		./scripts/get_data.sh
 
    This will create and populate an rcv1/ directory.
 
 2. start up a server which trains a topic model on the RCV1 news items:
 
-	./scripts/server.py rcv1
+		python scripts/server.py rcv1
 
 3. as soon as training has started, start up a client which queries the server for learned topics matching any text that you enter:
 
-	./scripts/client.py
+		python scripts/client.py
 
    The top few terms for each matching topic will be displayed.  Note that you'll actually see *stemmed* text tokens, i.e. partial words stripped of their endings, for each topic, as that's what the dataset contains.  You should see sensible topics as long as the text you enter has some similarity with the items in the dataset.  Obviously if you enter just a few words, or a sentence where none of the words ever appeared in the business papers in 1996-7, then all bets are off.
 
